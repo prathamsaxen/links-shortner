@@ -22,7 +22,7 @@ const Main: React.FC = () => {
 
     const fetchData = async () => {
         try {
-            const response = await fetch(`${process.env.NEXT_PUBLIC_ENDPOINT}`, {
+            const response = await fetch(`${process.env.NEXT_PUBLIC_ENDPOINT}/links`, {
                 headers: { 'x-token': `${process.env.NEXT_PUBLIC_TOKEN}` }
             });
             if (!response.ok) throw new Error('Failed to fetch data');
@@ -63,9 +63,8 @@ const Main: React.FC = () => {
         }
 
         setError(null);
-        console.log(process.env.NEXT_PUBLIC_TOKEN)
         try {
-            const response = await fetch(`${process.env.NEXT_PUBLIC_ENDPOINT}`, {
+            const response = await fetch(`${process.env.NEXT_PUBLIC_ENDPOINT}/links`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
