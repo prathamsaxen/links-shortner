@@ -1,18 +1,18 @@
-import React from 'react';
-import { Button } from '../ui/button';
+import Link from "next/link"
+import { LinkIcon } from "lucide-react"
 
-function Header() {
-    return (
-        <header className='container mx-auto px-4 py-4 flex justify-between items-center'>
-            <h1 className='text-2xl font-bold bg-gradient-to-r from-pink-500 to-purple-500 text-transparent bg-clip-text'>Linkly</h1>
-            <div className='flex gap-4 items-center'>
-                <Button variant='ghost' className='text-muted-foreground'>
-                    Login
-                </Button>
-                <Button className='bg-blue-600 hover:bg-blue-700'>Register Now</Button>
-            </div>
-        </header>
-    );
+export default function Header() {
+  return (
+    <header className="border-b dark:border-slate-800 py-4">
+      <div className="container mx-auto px-4 flex justify-center items-center">
+        <Link href="/" className="flex items-center gap-2">
+          <LinkIcon className="h-6 w-6 text-blue-600" />
+          <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 via-pink-500 to-purple-600 text-transparent bg-clip-text">
+            Linkly
+          </span>
+        </Link>
+      </div>
+    </header>
+  )
 }
 
-export default Header;
