@@ -5,6 +5,13 @@ import Link from 'next/link';
 import { Facebook, Instagram, Linkedin, Github } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
+const socialLinks = [
+    { href: 'https://facebook.com/prathamsaxen', icon: <Facebook className='h-4 w-4' />, label: 'Facebook' },
+    { href: 'https://instagram.com/prathamsaxen', icon: <Instagram className='h-4 w-4' />, label: 'Instagram' },
+    { href: 'https://linkedin.com/in/prathamsaxena', icon: <Linkedin className='h-4 w-4' />, label: 'LinkedIn' },
+    { href: 'https://github.com/prathamsaxen', icon: <Github className='h-4 w-4' />, label: 'GitHub' },
+];
+
 const Footer: React.FC = () => {
     return (
         <footer className='w-full border-t dark:border-slate-800'>
@@ -20,10 +27,9 @@ const Footer: React.FC = () => {
 
                     {/* Right side - Social media icons */}
                     <div className='flex items-center space-x-4'>
-                        <SocialLink href='https://facebook.com' icon={<Facebook className='h-4 w-4' />} label='Facebook' />
-                        <SocialLink href='https://instagram.com' icon={<Instagram className='h-4 w-4' />} label='Instagram' />
-                        <SocialLink href='https://linkedin.com/in/prathamsaxena' icon={<Linkedin className='h-4 w-4' />} label='LinkedIn' />
-                        <SocialLink href='https://github.com' icon={<Github className='h-4 w-4' />} label='GitHub' />
+                        {socialLinks.map(({ href, icon, label }) => (
+                            <SocialLink key={label} href={href} icon={icon} label={label} />
+                        ))}
                     </div>
                 </div>
             </div>

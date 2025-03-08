@@ -68,7 +68,7 @@ const Main: React.FC = () => {
         setError(null);
         setIsSubmitting(true);
         try {
-            const response = await fetch(`/api/links`, {
+            const response = await fetch(`${process.env.NEXT_PUBLIC_ENDPOINT}/links`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
