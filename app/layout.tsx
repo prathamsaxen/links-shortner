@@ -27,6 +27,9 @@ export const metadata: Metadata = {
         card: 'summary_large_image',
         title: 'Linkly - URL Shortener',
         description: 'Shorten your long URLs with Linkly'
+    },
+    icons:{
+        icon:'/favicon.ico'
     }
 };
 export default function RootLayout({
